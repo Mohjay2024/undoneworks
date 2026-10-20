@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact - Arya Samaj Nairobi</title><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{bhagwa:'#FF6B00',cream:'#FFF8E8'}}}}</script></head>
+<body class="bg-cream">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-3">
+      <img src="{% static 'main/om_logo.gif' %}" alt="Om" class="w-10 h-10 object-contain">
+      <div><h1 class="font-bold text-bhagwa leading-none">ARYA SAMAJ</h1><p class="text-xs tracking-widest text-bhagwa font-bold">NAIROBI</p></div>
+    </a>
+    <nav class="hidden md:flex gap-2 text-sm font-bold">
+      <a href="/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Home</a>
+      <a href="/about/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">About</a>
+      <a href="/principles/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">10 Principles</a>
+      <a href="/services/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Services</a>
+      <a href="/articles/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">News & Gallery</a>
+      <a href="/contact/" class="px-4 py-2 rounded-full bg-white text-bhagwa border-2 border-bhagwa">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="/contact/" class="bg-bhagwa text-white px-5 py-2 rounded-full text-sm font-bold border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">DONATE</a>
+      <!-- 1. ADD THIS BUTTON HERE -->
+      <button id="menu-btn" class="md:hidden w-10 h-10 bg-bhagwa text-white rounded-full font-bold border-2 border-bhagwa">☰</button>
+    </div>
+  </div>
+
+  <!-- 2. ADD THIS MOBILE MENU HERE, JUST AFTER HEADER INNER DIV -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-100 px-6 py-4">
+    <div class="flex flex-col gap-2 text-sm font-bold">
+      <a href="/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">Home</a>
+      <a href="/about/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">About</a>
+      <a href="/principles/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">10 Principles</a>
+      <a href="/services/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">Services</a>
+      <a href="/articles/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">News & Gallery</a>
+      <a href="/contact/" class="px-4 py-3 rounded-full bg-white text-bhagwa border-2 border-bhagwa text-center">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="max-w-4xl mx-auto p-8">
+<h1 class="text-4xl font-bold text-bhagwa">Contact Us</h1>
+<p class="text-gray-600 mt-2">For bookings and enquiries - we will respond within 24 hours</p>
+
+<div class="bg-white p-8 rounded-2xl shadow-xl mt-8">
+  <form method="POST" action="/contact/">
+    {% csrf_token %}
+    <div class="grid md:grid-cols-2 gap-4">
+      <input name="name" required placeholder="Your Name" class="border border-orange-200 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-bhagwa">
+      <input name="phone" required placeholder="Phone: +254..." class="border border-orange-200 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-bhagwa">
+    </div>
+    <input name="email" type="email" placeholder="Email (optional)" class="mt-4 border border-orange-200 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-bhagwa">
+    <select id="service" name="service" class="mt-4 border border-orange-200 rounded-xl px-4 py-3 w-full bg-white focus:outline-none focus:border-bhagwa">
+      <option value="">Select Service</option>
+      <option>Vivah Sanskar</option><option>Havan / Yajna</option><option>Shuddhi Sanskar</option><option>Antyeshti</option><option>General Enquiry</option>
+    </select>
+    <textarea name="message" rows="4" placeholder="Message / Date needed" class="mt-4 border border-orange-200 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-bhagwa"></textarea>
+    <button type="submit" class="mt-6 bg-bhagwa text-white px-10 py-3 rounded-full font-bold w-full md:w-auto border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Send Request</button>
+  </form>
+  {% if success %}
+  <p class="mt-6 bg-green-50 text-green-700 border border-green-200 p-4 rounded-xl">Thank you! We have received your request. We will call you soon. Om!</p>
+  {% endif %}
+</div>
+
+<!-- 3 ORANGE BOXES -->
+<div class="mt-12 grid md:grid-cols-3 gap-6">
+  <div class="bg-bhagwa p-6 rounded-2xl shadow-lg text-center text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">
+    <div class="w-12 h-12 bg-white text-bhagwa rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">1</div>
+    <h3 class="font-bold text-lg">Fill Form Above</h3>
+    <p class="text-sm mt-2 opacity-90">Select your service and date. We get your request instantly.</p>
+  </div>
+  <div class="bg-bhagwa p-6 rounded-2xl shadow-lg text-center text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">
+    <div class="w-12 h-12 bg-white text-bhagwa rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">2</div>
+    <h3 class="font-bold text-lg">We Call You</h3>
+    <p class="text-sm mt-2 opacity-90">Pandit ji confirms muhurat and requirements within 24 hours.</p>
+  </div>
+  <div class="bg-bhagwa p-6 rounded-2xl shadow-lg text-center text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">
+    <div class="w-12 h-12 bg-white text-bhagwa rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">3</div>
+    <h3 class="font-bold text-lg">Booking Confirmed</h3>
+    <p class="text-sm mt-2 opacity-90">Come to Arya Samaj Nairobi, 3rd Parklands for your sanskar.</p>
+  </div>
+</div>
+
+<div class="mt-10 bg-bhagwa text-white p-8 rounded-2xl text-center border-2 border-bhagwa">
+  <h3 class="text-2xl font-bold">Prefer to Book Directly?</h3>
+  <p class="mt-2 opacity-90">Call or WhatsApp us now</p>
+  <div class="mt-4 flex justify-center gap-4 flex-wrap">
+    <a href="tel:+254737223133" class="bg-bhagwa text-white px-8 py-3 rounded-full font-bold border-2 border-white hover:bg-white hover:text-bhagwa transition">📞 +254 737 223133</a>
+    <a href="https://wa.me/254737223133" class="bg-white text-bhagwa px-8 py-3 rounded-full font-bold border-2 border-white hover:bg-bhagwa hover:text-white transition">WhatsApp Booking</a>
+  </div>
+  <p class="mt-4 text-sm opacity-80">Arya Samaj Nairobi, 3rd Parklands | arya.samaj.nairobi@gmail.com</p>
+</div>
+
+<!-- GOOGLE MAP -->
+<div class="mt-10 bg-white p-4 rounded-2xl shadow-xl border-2 border-orange-100">
+  <h3 class="font-bold text-bhagwa text-lg mb-3">📍 Find Us - 3rd Parklands, Nairobi</h3>
+  <iframe src="https://maps.google.com/maps?q=Arya%20Samaj%20Nairobi%203rd%20Parklands&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full h-80 rounded-xl border-2 border-bhagwa" loading="lazy"></iframe>
+  <div class="mt-3 flex gap-3 flex-wrap">
+    <a href="https://www.google.com/maps/search/Arya+Samaj+Nairobi+3rd+Parklands" target="_blank" class="bg-bhagwa text-white px-6 py-2 rounded-full text-sm font-bold border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Open in Google Maps</a>
+    <span class="text-sm text-gray-600 py-2">Daily Havan • Sunday Satsang 11 AM</span>
+  </div>
+</div>
+
+</div>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/254737223133?text=Om%20Namaste%20Arya%20Samaj%20Nairobi%2C%20I%20want%20to%20book%20a%20ceremony" target="_blank" class="fixed bottom-5 right-5 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl text-2xl z-50 border-2 border-white hover:bg-white hover:text-[#25D366] hover:border-[#25D366] transition">💬</a>
+
+<!-- 3. ADD THIS SCRIPT HERE -->
+<script>
+function toggleMenu(){
+  var m = document.getElementById('mobile-menu');
+  var b = document.getElementById('menu-btn');
+  if(m.classList.contains('hidden')){
+    m.classList.remove('hidden');
+    b.textContent = '✕';
+  } else {
+    m.classList.add('hidden');
+    b.textContent = '☰';
+  }
+}
+document.getElementById('menu-btn').addEventListener('click', toggleMenu);
+</script>
+</body></html>

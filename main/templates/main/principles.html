@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>10 Principles - Arya Samaj</title><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={theme:{extend:{colors:{bhagwa:'#FF6B00',cream:'#FFF8E8'}}}}</script></head>
+<body class="bg-cream">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-3">
+      <img src="{% static 'main/om_logo.gif' %}" alt="Om Logo" class="w-10 h-10 object-contain">
+      <div><h1 class="font-bold text-bhagwa leading-none">ARYA SAMAJ</h1><p class="text-xs tracking-widest text-bhagwa font-bold">NAIROBI</p></div>
+    </a>
+    <nav class="hidden md:flex gap-2 text-sm font-bold">
+      <a href="/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Home</a>
+      <a href="/about/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">About</a>
+      <a href="/principles/" class="px-4 py-2 rounded-full bg-white text-bhagwa border-2 border-bhagwa">10 Principles</a>
+      <a href="/services/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Services</a>
+      <a href="/articles/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">News & Gallery</a>
+      <a href="/contact/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="/contact/" class="bg-bhagwa text-white px-5 py-2 rounded-full text-sm font-bold border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">DONATE</a>
+      <button id="menu-btn" class="md:hidden w-10 h-10 bg-bhagwa text-white rounded-full font-bold border-2 border-bhagwa">☰</button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-100 px-6 py-4">
+    <div class="flex flex-col gap-2 text-sm font-bold">
+      <a href="/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">Home</a>
+      <a href="/about/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">About</a>
+      <a href="/principles/" class="px-4 py-3 rounded-full bg-white text-bhagwa border-2 border-bhagwa text-center">10 Principles</a>
+      <a href="/services/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">Services</a>
+      <a href="/articles/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">News & Gallery</a>
+      <a href="/contact/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="max-w-5xl mx-auto p-8">
+<h1 class="text-4xl font-bold text-center text-bhagwa">10 Principles - Das Niyam</h1>
+<p class="text-center text-gray-500 mt-2">The foundation of Arya Samaj - given by Maharishi Dayanand Saraswati</p>
+<div class="grid md:grid-cols-2 gap-4 mt-10">
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">1.</b> <span class="font-bold">God is the source</span><p class="text-sm text-gray-600 mt-2">God is the source of all true knowledge and all that is known through knowledge.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">2.</b> <span class="font-bold">God's Nature</span><p class="text-sm text-gray-600 mt-2">God is existent, intelligent, blissful, formless, almighty, just, merciful, unborn, infinite, unchangeable and holy.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">3.</b> <span class="font-bold">Vedas</span><p class="text-sm text-gray-600 mt-2">Vedas are the scriptures of true knowledge. It is the duty of all Aryas to read, teach and hear them.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">4.</b> <span class="font-bold">Truth</span><p class="text-sm text-gray-600 mt-2">We should always be ready to accept truth and reject falsehood.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">5.</b> <span class="font-bold">Dharma</span><p class="text-sm text-gray-600 mt-2">All actions should be done according to Dharma after considering right and wrong.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">6.</b> <span class="font-bold">Welfare of World</span><p class="text-sm text-gray-600 mt-2">The primary aim of Arya Samaj is to do good to the whole world - physical, spiritual and social progress.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">7.</b> <span class="font-bold">Love and Justice</span><p class="text-sm text-gray-600 mt-2">Treat all with love, justice and according to their merit.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">8.</b> <span class="font-bold">Knowledge</span><p class="text-sm text-gray-600 mt-2">We should promote knowledge and dispel ignorance.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">9.</b> <span class="font-bold">Selflessness</span><p class="text-sm text-gray-600 mt-2">No one should be satisfied with his own welfare, but should see his welfare in the welfare of others.</p></div>
+<div class="bg-white p-6 rounded-xl border-l-4 border-bhagwa shadow-sm"><b class="text-bhagwa text-lg">10.</b> <span class="font-bold">Freedom</span><p class="text-sm text-gray-600 mt-2">All should follow social rules for everyone's welfare, but everyone is free in personal matters that benefit them.</p></div>
+</div>
+
+<div class="text-center mt-10 flex justify-center gap-4 flex-wrap">
+<a href="/" class="bg-bhagwa text-white px-8 py-3 rounded-full font-bold border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Back to Home</a>
+<a href="/services/" class="bg-bhagwa text-white px-8 py-3 rounded-full font-bold border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Our Services</a>
+</div>
+
+<!-- MAP -->
+<div class="mt-10 bg-white p-4 rounded-2xl shadow-xl border-2 border-orange-100">
+  <h3 class="font-bold text-bhagwa text-lg mb-3">📍 Find Us - 3rd Parklands, Nairobi</h3>
+  <iframe src="https://maps.google.com/maps?q=Arya%20Samaj%20Nairobi%203rd%20Parklands&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full h-80 rounded-xl border-2 border-bhagwa" loading="lazy"></iframe>
+  <div class="mt-3 flex gap-3 flex-wrap">
+    <a href="https://www.google.com/maps/search/Arya+Samaj+Nairobi+3rd+Parklands" target="_blank" class="bg-bhagwa text-white px-6 py-2 rounded-full text-sm font-bold border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Open in Google Maps</a>
+    <span class="text-sm text-gray-600 py-2">Daily Havan • Sunday Satsang 11 AM</span>
+  </div>
+</div>
+
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254737223133?text=Om%20Namaste%20Arya%20Samaj%20Nairobi%2C%20I%20want%20to%20book%20a%20ceremony" target="_blank" class="fixed bottom-5 right-5 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl text-2xl z-50 border-2 border-white hover:bg-white hover:text-[#25D366] hover:border-[#25D366] transition">💬</a>
+
+<script>
+function toggleMenu(){
+  var m = document.getElementById('mobile-menu');
+  var b = document.getElementById('menu-btn');
+  if(m.classList.contains('hidden')){
+    m.classList.remove('hidden');
+    b.textContent = '✕';
+  } else {
+    m.classList.add('hidden');
+    b.textContent = '☰';
+  }
+}
+document.getElementById('menu-btn').addEventListener('click', toggleMenu);
+</script>
+</body></html>

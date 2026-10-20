@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div style="padding: 40px;">
+    <h1>Articles Page is Working!</h1>
+    <p>Total articles: {{ posts|length }}</p>
+    <p>Total photos: {{ all_photos|length }}</p>
+
+    {% for post in posts %}
+        <div style="border:1px solid #ccc; margin:10px; padding:10px;">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.excerpt }}</p>
+            {% if post.cover_image %}
+                <img src="{{ post.cover_image.url }}" style="max-width:300px;">
+            {% endif %}
+            <br>
+            <a href="{% url 'article_detail' post.slug %}">Read more</a>
+        </div>
+    {% empty %}
+        <p>No articles yet - Go to /admin/ and Add one!</p>
+    {% endfor %}
+
+    <hr>
+    <h2>Photo Gallery</h2>
+    {% for photo in all_photos %}
+        <img src="{{ photo.image.url }}" style="width:200px; margin:5px;">
+    {% empty %}
+        <p>No photos yet</p>
+    {% endfor %}
+</div>
+{% endblock %}

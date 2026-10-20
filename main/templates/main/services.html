@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<style>
+.donate-btn{background:#FF6B00; color:white; border:2px solid #FF6B00; border-radius:999px; padding:12px 30px; font-weight:700; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block;}
+.donate-btn:hover{background:white!important; color:#FF6B00!important;}
+.donate-btn-small{background:#FF6B00; color:white; border:2px solid #FF6B00; border-radius:999px; padding:12px; width:100%; font-weight:700; cursor:pointer; transition:all 0.3s ease;}
+.donate-btn-small:hover{background:white!important; color:#FF6B00!important;}
+.card{background:white; border:1px solid rgba(255,107,0,0.12); border-radius:20px; padding:26px;}
+</style>
+
+<div style="text-align:center; margin-bottom:30px;">
+  <p style="font-size:22px; color:#FF6B00;">Vedic ceremonies performed at the MD Bhavan</p>
+</div>
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:20px;">
+
+  <div class="card">
+    <h3 style="color:#FF6B00; font-size:20px; font-weight:800;">Daily Havan</h3>
+    <p style="color:#666; margin:10px 0;">Daily morning Havan at Arya Samaj Temple.</p>
+    <a href="/contact/" class="donate-btn" style="margin-top:10px;">Book Now</a>
+  </div>
+
+  <div class="card">
+    <h3 style="color:#FF6B00; font-size:20px; font-weight:800;">Vivah Sanskar</h3>
+    <p style="color:#666; margin:10px 0;">Complete Vedic wedding ceremony.</p>
+    <a href="/contact/" class="donate-btn" style="margin-top:10px;">Book Now</a>
+  </div>
+
+  <div class="card">
+    <h3 style="color:#FF6B00; font-size:20px; font-weight:800;">Namkaran & Mundan</h3>
+    <p style="color:#666; margin:10px 0;">Child naming and first hair cutting Sanskar.</p>
+    <a href="/contact/" class="donate-btn" style="margin-top:10px;">Book Now</a>
+  </div>
+
+  <div class="card">
+    <h3 style="color:#FF6B00; font-size:20px; font-weight:800;">Sunday Satsang</h3>
+    <p style="color:#666; margin:10px 0;">Every Sunday 11 AM - Havan,Bhajans & Pravachan.</p>
+    <a href="/#donate-section" class="donate-btn" style="margin-top:10px;">Donate</a>
+  </div>
+
+</div>
+
+<div style="margin-top:50px; text-align:center; background:#FFF8E7; border-radius:24px; padding:30px; border:1px solid rgba(255,107,0,0.15);">
+  <h2 style="color:#FF6B00; font-size:28px;">Need a Ceremony?</h2>
+  <p style="color:#FF6B00; margin-top:8px;">Contact us for booking</p>
+  <a href="/contact/" class="donate-btn" style="margin-top:15px;">Book Ceremony</a>
+  <a href="/#donate-section" class="donate-btn" style="margin-top:15px; margin-left:10px;">Donate Now</a>
+</div>
+
+{% endblock %}

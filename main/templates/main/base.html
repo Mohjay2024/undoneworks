@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Arya Samaj Nairobi{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{bhagwa:'#FF6B00',cream:'#FFF8E8'}}}}</script>
+  <style>body{background:#FFF8E8;}</style>
+</head>
+<body class="bg-cream">
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-3">
+      <img src="{% static 'main/om_logo.gif' %}" alt="Om" class="w-10 h-10 object-contain">
+      <div><h1 class="font-bold text-bhagwa leading-none">ARYA SAMAJ</h1><p class="text-xs tracking-widest text-bhagwa font-bold">NAIROBI</p></div>
+    </a>
+    
+    <!-- DESKTOP MENU -->
+    <nav class="hidden md:flex gap-2 text-sm font-bold">
+      <a href="/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Home</a>
+      <a href="/about/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">About</a>
+      <a href="/principles/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">10 Principles</a>
+      <a href="/services/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Services</a>
+      <a href="/articles/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">News & Gallery</a>
+      <a href="/contact/" class="px-4 py-2 rounded-full bg-bhagwa text-white border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="/contact/" class="bg-bhagwa text-white px-5 py-2 rounded-full text-sm font-bold border-2 border-bhagwa hover:bg-white hover:text-bhagwa transition">DONATE</a>
+      <!-- MOBILE HAMBURGER -->
+      <button id="menu-btn" class="md:hidden w-10 h-10 bg-bhagwa text-white rounded-full font-bold border-2 border-bhagwa">☰</button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU (hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-100 px-6 py-4">
+    <div class="flex flex-col gap-2 text-sm font-bold">
+      <a href="/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">Home</a>
+      <a href="/about/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">About</a>
+      <a href="/principles/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">10 Principles</a>
+      <a href="/services/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">Services</a>
+      <a href="/articles/" class="px-4 py-3 rounded-full bg-bhagwa text-white border-2 border-bhagwa text-center">News & Gallery</a>
+      <a href="/contact/" class="px-4 py-3 rounded-full bg-white text-bhagwa border-2 border-bhagwa text-center">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6 py-8">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="mt-20 bg-white border-t border-orange-100 py-8 text-center text-sm text-gray-500">
+  <p class="font-bold text-bhagwa">ARYA SAMAJ NAIROBI</p>
+  <p class="font-bold text-bhagwa">3rd Parklands, Nairobi • aryasamajnairobi@gmail.com • +254 737 223133</p>
+  <p class="mt-2 font-bold text-bhagwa">Om Krinvanto Vishwam Aryam</p>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254737223133?text=Om%20Namaste%20Arya%20Samaj%20Nairobi%2C%20I%20want%20to%20book%20a%20ceremony" target="_blank" class="fixed bottom-5 right-5 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl text-2xl z-50 border-2 border-white hover:bg-white hover:text-[#25D366] hover:border-[#25D366] transition">💬</a>
+
+<script>
+document.getElementById('menu-btn').onclick = function(){
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+  this.textContent = document.getElementById('mobile-menu').classList.contains('hidden') ? '☰' : '✕';
+}
+</script>
+
+</body>
+</html>

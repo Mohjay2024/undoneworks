@@ -1,12 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arya Samaj</title>
-</head>
-<body>
-    <h1>Welcome to Arya Samaj</h1>
-    <p>Learn about our beliefs, community, and events.</p>
-</body>
-</html>
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+:root{--orange:#FF6B00;}
+.text-bhagwa{color:#FF6B00;}.bg-bhagwa{background:#FF6B00;}
+.hero-grid{display:grid; grid-template-columns:1.2fr 0.8fr; gap:32px; align-items:center;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+.card{background:white; border:1px solid rgba(255,107,0,0.12); border-radius:20px; padding:26px;}
+#donate-section{background:#FFF8E7; border-radius:24px; padding:40px 20px; text-align:center; margin-top:40px; border:1px solid rgba(255,107,0,0.15);}
+#donate-options{display:none; margin-top:28px; justify-content:center; gap:20px; flex-wrap:wrap;}
+.donate-box{background:white; border:1px solid rgba(255,107,0,0.15); border-radius:16px; padding:24px; width:310px;}
+.donate-btn{background:#FF6B00; color:white; border:2px solid #FF6B00; border-radius:999px; padding:12px 30px; font-weight:700; cursor:pointer; transition:all 0.3s ease; text-decoration:none; display:inline-block;}
+.donate-btn:hover{background:white!important; color:#FF6B00!important;}
+.donate-btn-small{background:#FF6B00; color:white; border:2px solid #FF6B00; border-radius:999px; padding:12px; width:100%; font-weight:700; cursor:pointer; transition:all 0.3s ease;}
+.donate-btn-small:hover{background:white!important; color:#FF6B00!important;}
+</style>
+
+<div class="hero-grid">
+  <div>
+    <p style="font-size:11px; letter-spacing:0.16em; color:#FF6B00; font-weight:800;">EST. 1903 • NAIROBI</p>
+    <h1 style="font-family:serif; font-size:52px; line-height:0.95; color:#FF6B00;">ARYA SAMAJ<br>NAIROBI</h1>
+    <p style="margin-top:18px; color:#666; max-width:520px;">Spreading Vedic Dharma,selfless service and education since 1903. Join our Havans,vedic classes, and Seva.</p>
+    <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#donate-section" onclick="document.getElementById('donate-options').style.display='flex'" class="donate-btn">Donate</a>
+        <a href="/contact/" class="donate-btn">Book Ceremony</a>
+    </div>
+  </div>
+  <div>
+  {% load static %}
+
+<div style="background:white; border-radius:28px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.07); max-width:320px; margin-left:auto; border:1px solid #f2e9db;">
+
+  <div style="background: linear-gradient(180deg, #FFFEFB 0%, #FFF7E8 100%); padding:16px 16px 0; text-align:center;">
+    <img src="{% static 'main/maharishi_final.png' %}" alt=" Maharishi Dayanand Saraswati" style="width:100%; max-height:420px; object-fit:contain; display:block; margin:0 auto; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.12));">
+  </div>
+
+  <div style="padding:18px 20px 22px; text-align:center;">
+    <p style="font-size:15px; font-weight:700; letter-spacing:0.18em; color:#FF6B00; margin:0;">FOUNDER - ARYA SAMAJ</p>
+    <h3 style="font-family:serif; font-size:24px; font-weight:800; color:#FF6B00; margin:8px 0 0; line-height:1.2;">Maharishi Dayanand Saraswati</h3>
+  </div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:60px; padding:50px 28px; background:white; border-radius:24px; border:1px solid rgba(255,107,0,0.1);">
+    <p style="font-size:13px; color:#FF6B00; font-weight:800;">ABOUT US</p>
+    <h2 style="font-family:serif; font-size:36px; color:#FF6B00;">A Century of Vedic Service in Kenya</h2>
+    <p style="margin-top:16px; color:#666;">Arya Samaj Nairobi was established in 1903 by the early Indian community in Kenya, inspired by the vision of Maharishi Dayanand Saraswati (1824-1883) and his call - Krinvanto Vishwam Aryam - Make the world noble.</p>
+    <p style="margin-top:12px; color:#666;">Our Parklands Yajnashala hosts daily Havans and Sunday Satsang at 11 AM</p>
+</div>
+
+<div style="margin-top:50px; text-align:center;">
+    <p style="font-size:11px; color:#FF6B00; font-weight:800;">OUR SERVICES</p>
+    <h2 style="font-family:serif; font-size:36px; color:#FF6B00;">Sanskars & Seva</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:18px; margin-top:24px; text-align:left;">
+    
+        <div class="card" style="background:#FF6B00; border-color:#FF6B00;"><h3 style="font-family:serif; font-size:32px; color:#FFFFFF;">Daily Havan</h3><p style="color:#FFFFFF; margin-top:8px; font-size:16px;">Daily at Parklands Yajnashala.</p></div>
+        <div class="card" style="background:#FF6B00; border-color:#FF6B00;"><h3 style="font-family:serif; font-size:32px; color:#FFFFFF;">Vivah Sanskar</h3><p style="color:#FFFFFF; margin-top:8px; font-size:16px;">Vedic wedding with Agni as witness.</p></div>
+        <div class="card" style="background:#FF6B00; border-color:#FF6B00;"><h3 style="font-family:serif; font-size:32px; color:#FFFFFF;">Sunday Satsang</h3><p style="color:#FFFFFF; margin-top:8px; font-size:16px;">Every Sunday 11 AM - Bhajans & Pravachan.</p></div>
+    </div>
+</div>
+
+<div id="donate-section">
+    <h2 style="font-family:serif; font-size:32px; color:#FF6B00;">Support Arya Samaj Nairobi</h2>
+    <p style="color:#666;">Your contribution helps us continue Vedic work.</p>
+    <button onclick="const el=document.getElementById('donate-options'); el.style.display=el.style.display==='flex'?'none':'flex'" class="donate-btn" style="margin-top:12px;">Donate Now</button>
+    <div id="donate-options">
+        <div class="donate-box">
+            <h3 style="color:#FF6B00;">M-Pesa Paybill</h3>
+            <div style="background:#FFF1E6; border:1px dashed #FF6B00; padding:12px; border-radius:12px; margin:12px 0;">
+                <b style="font-size:26px; color:#FF6B00; display:block;">236966</b><small>ACCOUNT: ARYA SAMAJ</small>
+            </div>
+            <button onclick="navigator.clipboard.writeText('236966'); alert('Copied 236966')" class="donate-btn-small">Copy Paybill</button>
+            <button onclick="window.location.href='tel:*334%23'" class="donate-btn-small" style="margin-top:10px;">Pay via M-Pesa</button>
+        </div>
+        <div class="donate-box">
+            <h3 style="color:#FF6B00;">Card Payment</h3><div style="font-size:48px; margin:15px 0;">Card</div>
+            <button onclick="document.getElementById('card-modal').style.display='flex'" class="donate-btn-small">Pay with Card</button>
+        </div>
+    </div>
+</div>
+
+<div id="card-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:9999;">
+    <div style="background:white; padding:28px; border-radius:16px; width:90%; max-width:420px;">
+        <h3 style="color:#FF6B00;">Card Donation</h3>
+        <input placeholder="Name" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:12px;">
+        <input placeholder="Card Number" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:12px;">
+        <input type="number" placeholder="Amount KES" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:12px;">
+        <button onclick="alert('Thank you!'); document.getElementById('card-modal').style.display='none'" class="donate-btn-small">Pay Now</button>
+        <button onclick="document.getElementById('card-modal').style.display='none'" style="width:100%; padding:12px; background:#eee; border:none; border-radius:999px; margin-top:10px; cursor:pointer;">Cancel</button>
+    </div>
+</div>
+{% endblock %} 
