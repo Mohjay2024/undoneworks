@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<div style="max-width:900px; margin:0 auto; padding:40px 20px;">
+
+  <a href="/articles/" style="color:#FF6B00; text-decoration:none;">← Back to Articles</a>
+  
+  <h1 style="font-family:serif; font-size:42px; color:#FF6B00; margin-top:16px;">{{ post.title }}</h1>
+  <p style="color:#999; font-size:13px;">{{ post.created_at|date:"F j, Y" }}</p>
+
+  {% if post.cover_image %}
+    <img src="{{ post.cover_image.url }}" style="width:100%; border-radius:20px; margin:20px 0; border:1px solid #f2e9db;">
+  {% endif %}
+
+  <div style="color:#444; line-height:1.7; font-size:17px; margin-top:20px;">
+    {{ post.content|linebreaks }}
+  </div>
+
+  <!-- THIS IS THE FOLDER GALLERY - photos for this event -->
+  <h2 style="color:#FF6B00; margin-top:50px; font-family:serif;">Photos from this Event</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;">
+    {% for photo in post.photos.all %}
+      <img src="{{ photo.image.url }}" style="width:220px; height:220px; object-fit:cover; border-radius:12px; border:1px solid #eee;">
+    {% empty %}
+      <!-- If using old model with all_photos -->
+      {% for photo in all_photos %}
+        <img src="{{ photo.image.url }}" style="width:220px; height:220px; object-fit:cover; border-radius:12px;">
+      {% empty %}
+        <p style="color:#999;">No photos yet for this event. Upload from /admin/ - they will auto-save to /media/events/{{ post.title|slugify }}/</p>
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}
